@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hamamotoip.github.io/atodekau-support/sitemap.xml
