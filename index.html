@@ -3,59 +3,89 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>あとで買う｜気になったら、撮っておくだけ（iPhoneアプリ・準備中）</title>
-<meta name="description" content="お店で出会った「いいな」を撮っておくと、買える場所つきのリストになるiPhoneアプリ。読み取りは全部iPhoneの中だけ。写真も文字も外に送りません。無料・広告なし。App Storeで準備中。">
+<title>カートに入れる｜お店で見つけたものも、カートに入れよう（iPhoneアプリ・準備中）</title>
+<meta name="description" content="お店で出会った「いいな」を撮っておくと、買える場所つきのカートになるiPhoneアプリ。読み取りは全部iPhoneの中だけ。写真も文字も外に送りません。無料・広告なし。App Storeで準備中。">
 <link rel="canonical" href="https://hamamotoip.github.io/atodekau-support/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="気になったら、撮っておくだけ｜あとで買う">
-<meta property="og:description" content="撮った写真が、買える場所つきのリストになる。通信ゼロ・無料・広告なし。App Storeで準備中。">
-<meta property="og:image" content="https://hamamotoip.github.io/atodekau-support/img/ogp.png?v=2">
+<meta property="og:title" content="お店で見つけたものも、カートに入れよう｜カートに入れる">
+<meta property="og:description" content="撮った写真が、買える場所つきのカートになる。通信ゼロ・無料・広告なし。App Storeで準備中。">
+<meta property="og:image" content="https://hamamotoip.github.io/atodekau-support/img/ogp.png?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:site_name" content="あとで買う">
+<meta property="og:site_name" content="カートに入れる">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://hamamotoip.github.io/atodekau-support/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="img/icon.png?v=2">
+<link rel="icon" href="img/icon.png?v=3">
 <style>
 :root{
-  --ink:#211f1c; --ink-soft:#736e66; --paper:#f9f6f1; --card:#fff;
-  --terra:#b3541e; --hair:#e3ded6;
+  --ink:#211f1c; --text:#2b2925; --muted:#736e66;
+  --paper:#f9f6f1; --card:#fff;
+  --accent:#b3541e; --accent-line:#93441a; --on-accent:#fff;
+  --line:#e3ded6; --line-soft:#e8e2d8;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
-  background:var(--paper);color:var(--ink);line-height:1.9;font-size:15.5px;}
-.wrap{max-width:680px;margin:0 auto;padding:0 22px;}
-.hero{text-align:center;padding:72px 0 48px;}
-.hero .icon{width:88px;height:88px;border-radius:22px;box-shadow:0 6px 24px rgba(179,84,30,.25);}
-h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:30px;line-height:1.5;
-  margin:28px 0 14px;font-weight:600;}
-.lead{color:var(--ink-soft);font-size:16px;}
-.soon{display:inline-block;margin-top:26px;font-size:13.5px;font-weight:600;color:var(--terra);
-  border:1.5px solid var(--terra);border-radius:999px;padding:8px 22px;}
-section{padding:44px 0;}
-section+section{border-top:1px solid var(--hair);}
-h2{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:21px;margin-bottom:22px;font-weight:600;}
-.step{display:flex;gap:16px;margin-bottom:22px;align-items:flex-start;}
-.step .n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--terra);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;margin-top:4px;}
-.step h3{font-size:16px;margin-bottom:4px;}
-.step p{color:var(--ink-soft);font-size:14.5px;}
-.cards{display:grid;gap:14px;}
-.card{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:18px 20px;}
-.card h3{font-size:15.5px;margin-bottom:6px;}
-.card p{color:var(--ink-soft);font-size:14px;}
-.faq dt{font-weight:600;font-size:15px;margin-top:20px;}
-.faq dt::before{content:"Q. ";color:var(--terra);}
-.faq dd{color:var(--ink-soft);font-size:14.5px;margin-top:4px;}
-footer{padding:44px 0 64px;text-align:center;color:var(--ink-soft);font-size:12.5px;
-  border-top:1px solid var(--hair);}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  line-height:1.8;-webkit-text-size-adjust:100%;}
+.wrap{max-width:680px;margin:0 auto;padding:0 22px;position:relative;}
+
+.hero{text-align:center;padding:clamp(34px,6vw,60px) 0 0;}
+.hero img.icon{width:clamp(80px,10vw,104px);height:clamp(80px,10vw,104px);border-radius:22%;
+  box-shadow:0 6px 22px rgba(179,84,30,.22);}
+.hero h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  font-size:clamp(1.55rem,4.6vw,2.3rem);line-height:1.5;
+  margin:clamp(18px,2.6vw,26px) 0 10px;color:var(--ink);letter-spacing:.01em;font-weight:600;}
+.hero p.one{font-size:clamp(1rem,1.6vw,1.15rem);margin:0 0 clamp(24px,3vw,32px);color:var(--text);}
+.hero img.shot{width:100%;max-width:clamp(220px,28vw,280px);border-radius:22px;
+  border:2px solid var(--line-soft);display:block;margin:0 auto 24px;
+  box-shadow:0 12px 34px rgba(33,31,28,.10);}
+.cta{display:inline-block;background:var(--card);color:var(--accent);font-weight:700;
+  border:1.5px solid var(--accent);border-radius:999px;
+  padding:clamp(13px,1.7vw,16px) clamp(34px,4.6vw,44px);
+  font-size:clamp(1rem,1.4vw,1.1rem);}
+
+.points{list-style:none;padding:0;margin:38px 0 0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:stretch;}
+.points li{background:var(--card);border:1px solid var(--line-soft);border-radius:12px;
+  padding:14px 10px 12px;color:var(--ink);text-align:center;line-height:1.5;text-wrap:balance;
+  font-size:clamp(.88rem,1.25vw,1rem);font-weight:700;}
+.points li::before{content:"";display:block;width:22px;height:3px;border-radius:2px;
+  background:var(--accent);margin:0 auto 8px;}
+@media (max-width:420px){.points{grid-template-columns:1fr}.points li{padding:10px}}
+
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:44px 0 0;}
+.trio figure{margin:0;text-align:center;}
+.trio img{width:100%;border-radius:14px;border:1.5px solid var(--line-soft);display:block;}
+.trio figcaption{font-size:.92rem;font-weight:700;color:var(--ink);margin-top:8px;
+  display:inline-block;border-bottom:2px solid var(--accent);padding-bottom:2px;}
+@media (max-width:420px){.trio{gap:8px}}
+
+.note{color:var(--muted);font-size:.95rem;margin:22px 0 0;}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 0;}
+.tags span{font-size:.84rem;color:var(--muted);border:1px solid var(--line-soft);
+  background:var(--card);border-radius:999px;padding:5px 13px;}
+
+.faq{margin:48px 0 0;}
+.faq details{border-top:1px solid var(--line);}
+.faq details:last-child{border-bottom:1px solid var(--line);}
+.faq summary{cursor:pointer;padding:15px 4px;font-weight:700;color:var(--ink);
+  list-style:none;position:relative;padding-right:28px;}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";position:absolute;right:6px;color:var(--accent);font-weight:400;}
+.faq details[open] summary::after{content:"−";}
+.faq p{margin:0 4px 16px;color:var(--text);font-size:.96rem;}
+
+footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 60px;
+  text-align:center;color:var(--muted);font-size:.84rem;}
+footer a{color:var(--muted);margin:0 10px;}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"あとで買う",
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"カートに入れる",
 "operatingSystem":"iOS 18以降","applicationCategory":"ShoppingApplication",
 "offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},
-"description":"お店で気になった物を撮っておくと、買える場所つきのリストになるiPhoneアプリ。読み取りは端末内だけで通信しない。",
+"description":"お店で気になった物を撮っておくと、買える場所つきのカートになるiPhoneアプリ。読み取りは端末内だけで通信しない。",
 "url":"https://hamamotoip.github.io/atodekau-support/","inLanguage":["ja"]}
 </script>
 </head>
@@ -64,55 +94,62 @@ footer{padding:44px 0 64px;text-align:center;color:var(--ink-soft);font-size:12.
 <div class="wrap">
 
 <div class="hero">
-  <img class="icon" src="img/icon.png?v=2" alt="あとで買う" width="88" height="88">
-  <h1>気になったら、<br>撮っておくだけ。</h1>
-  <p class="lead">お店で出会った「いいな」が、<br>買える場所つきのリストになります。</p>
-  <span class="soon">App Store で準備中</span>
+  <img class="icon" src="img/icon.png?v=3" alt="カートに入れる">
+  <h1>お店で見つけたものも、<br>カートに入れよう。</h1>
+  <p class="one">気になったら、撮っておくだけ。買える場所つきのカートになります。</p>
+  <img class="shot" src="img/scr2.png" alt="撮った直後に、読み取ったワードの候補から選ぶ画面（開発中のサンプル）">
+  <span class="cta">App Store で準備中</span>
 </div>
 
-<section>
-  <h2>使い方は、3つだけ</h2>
-  <div class="step"><div class="n">1</div><div>
-    <h3>撮る</h3>
-    <p>商品でも、値札でも、商品ページのスクショでも。気になった瞬間に1枚。</p>
-  </div></div>
-  <div class="step"><div class="n">2</div><div>
-    <h3>読み取ったワードをえらぶ</h3>
-    <p>写真の文字はアプリが読み取って、ワードの候補にします。正しいものをタップでえらぶだけ。決めるのはあなたで、打ち込む手間はありません。</p>
-  </div></div>
-  <div class="step"><div class="n">3</div><div>
-    <h3>あとで、探しに行く</h3>
-    <p>えらんだワードで Amazon・楽天・メルカリ・Google にひとっ飛び。QRコードやバーコードが写っていれば、そのまま商品ページへ。</p>
-  </div></div>
-</section>
+<ul class="points">
+  <li>通信ゼロで動く</li>
+  <li>読み取りは下書き、<br>選ぶだけ</li>
+  <li>無料・広告なし</li>
+</ul>
 
-<section>
-  <h2>安心して撮れるように</h2>
-  <div class="cards">
-    <div class="card"><h3>通信ゼロ</h3>
-      <p>写真も、読み取った文字も、iPhoneの外に出ません。文字の読み取りはすべて端末の中だけで動きます。</p></div>
-    <div class="card"><h3>無料・広告なし</h3>
-      <p>課金も広告もありません。</p></div>
-    <div class="card"><h3>整理しなくても、見つかる</h3>
-      <p>読み取った文字はぜんぶ検索にきくので、「あの白いマグ」で探せます。名前を付けるのはあとからでも、付けなくても。</p></div>
-  </div>
-</section>
+<div class="trio">
+  <figure><img src="img/scr1.png" alt="撮ったものが並ぶカートの一覧画面（開発中のサンプル）"><figcaption>撮って、入れる</figcaption></figure>
+  <figure><img src="img/scr2.png" alt="読み取ったワードの候補から選ぶ画面（開発中のサンプル）"><figcaption>ワードをえらぶ</figcaption></figure>
+  <figure><img src="img/scr3.png" alt="選んだワードでAmazonや楽天を検索する画面（開発中のサンプル）"><figcaption>探しに行く</figcaption></figure>
+</div>
 
-<section class="faq">
-  <h2>よくある質問</h2>
-  <dl>
-    <dt>撮った写真はどこかに送られますか？</dt>
-    <dd>送られません。通信機能そのものがなく、読み取りはiPhoneの中だけで行います。</dd>
-    <dt>読み取りが間違っていたら？</dt>
-    <dd>読み取りは下書きです。ワードはタップでえらび直せて、消すのも足すのも指1本でできます。</dd>
-    <dt>いつ使えますか？</dt>
-    <dd>App Storeで公開の準備をしています。</dd>
-  </dl>
-</section>
+<p class="note">写真の文字はアプリが読み取って、ワードの候補にします。正しいものをタップでえらぶだけ。えらんだワードがそのまま検索語になって、Amazon・楽天・メルカリ・Google にひとっ飛びできます。QRコードやバーコードが写っていれば、そのまま商品ページへ。<br><span style="font-size:.85em">※ 画面は開発中のサンプルです</span></p>
+
+<div class="tags">
+  <span>オフラインで動く</span>
+  <span>アカウント不要</span>
+  <span>位置情報なし</span>
+  <span>広告なし</span>
+  <span>iOS 18以降</span>
+</div>
+
+<div class="faq">
+<details>
+  <summary>撮った写真はどこかに送られますか？</summary>
+  <p>送られません。通信機能そのものがなく、文字の読み取りもすべてiPhoneの中だけで行います。</p>
+</details>
+<details>
+  <summary>読み取りが間違っていたら？</summary>
+  <p>読み取りは下書きです。正しいワードをタップでえらぶだけで、選ばなかった候補はそのままでかまいません。手で足すこともできます。</p>
+</details>
+<details>
+  <summary>ワードをえらばないと使えませんか？</summary>
+  <p>えらばなくても、写真だけでカートに置いておけます。読み取った文字はぜんぶ検索にきくので、「あの白いマグ」で探せます。</p>
+</details>
+<details>
+  <summary>広告や課金はありますか？</summary>
+  <p>ありません。</p>
+</details>
+<details>
+  <summary>いつ使えますか？</summary>
+  <p>App Storeで公開の準備をしています。</p>
+</details>
+</div>
 
 <footer>
-  <p><a href="privacy.html" style="color:inherit">プライバシーポリシー</a>　·　<a href="terms.html" style="color:inherit">ご利用にあたって</a></p>
-  <p style="margin-top:8px">あとで買う（準備中）</p>
+  <a href="terms.html">ご利用にあたって</a>
+  <a href="privacy.html">プライバシーポリシー</a>
+  <div style="margin-top:1em">© 2026 カートに入れる（準備中）</div>
 </footer>
 
 </div>
